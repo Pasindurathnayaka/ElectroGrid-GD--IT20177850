@@ -41,3 +41,18 @@ public class CustomerService extends HttpServlet {
 				request.getParameter("cusPhone")); 
 				response.getWriter().write(output);
 	}
+
+	
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method
+
+		Map paras = getParasMap(request); 
+		 
+		 String output = customerObj.updateCustomer(paras.get("hidCustomerIDSave").toString(),     
+		    		paras.get("cusName").toString(),     
+		    		paras.get("cusAddress").toString(), 
+		    		paras.get("cusEmail").toString(),
+		    		paras.get("cusPhone").toString()); 
+		 
+		 			response.getWriter().write(output);
+	}
