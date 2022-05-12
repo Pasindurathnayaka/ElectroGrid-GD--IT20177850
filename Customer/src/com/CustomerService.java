@@ -32,3 +32,12 @@ public class CustomerService extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String output = customerObj.insertCustomer(request.getParameter("cusName"),      
+				request.getParameter("cusAddress"),
+				request.getParameter("cusEmail"),
+				request.getParameter("cusPhone")); 
+				response.getWriter().write(output);
+	}
